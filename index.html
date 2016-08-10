@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="shopApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Shopboard</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/resources/items.js"></script>
+    <script type="text/javascript" src="./js/controllers/itemsController.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+  </head>
+  <body ng-controller="ItemsController as shop">
+
+    <h1 class="heading">Items Available</h1>
+
+      <div id="index-container">
+      <table class="table table-stripedd table-hoverr table-borderedd borderless">
+        <thead>
+          <tr class="dangerr">
+            <th class="col-sm-4 text-center item-name" data-field="name">Item Name</th>
+            <th class="col-sm-4 text-center item-cost" data-field="score">Cost</th>
+            <th class="col-sm-4 text-center item-cost" data-field="score">Quantity</th>
+
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="field" ng-repeat="item in shop.all | orderBy:'name' " >
+            <td class="text-center name">{{item.name}}</td> <br/>
+            <td class="text-center score">{{item.cost}}</td> <br/>
+            <td class="text-center score">{{item.quantity}}</td>
+            <td class="text-center score"> <button ng-click="shop.editItem(item)">Edit</button> </td>
+            <td class="text-center score"> <button ng-click="shop.deleteItem(item)">Delete</button> </td>
+          </tr>
+        </tbody>
+        <br/>
+      </table>
+      </div>
+
+
+      <form name="shop.newItem" ng-submit="shop.addItem()">
+        <label>Name</label>
+        <input type="text" name="name" ng-model="shop.items.name">
+        <label>Cost</label>
+        <input type="text" name="cost" ng-model="shop.items.cost">
+        <label>quantity</label>
+        <input type="text" name="quantity" ng-model="shop.items.quantity">
+        <input type="submit">
+      </form>
+
+
+  </body>
+</html>

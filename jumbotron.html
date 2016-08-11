@@ -1,0 +1,40 @@
+
+<div ng-controller="ItemsController as shop"></div>
+  <h1> JUMBOTRON </h1>
+
+  <div id="index-container">
+  <table class="table table-stripedd table-hoverr table-borderedd borderless">
+    <thead>
+      <tr class="dangerr">
+        <th class="col-sm-4 text-center item-name" data-field="name">Item Name</th>
+        <th class="col-sm-4 text-center item-cost" data-field="score">Cost</th>
+        <th class="col-sm-4 text-center item-cost" data-field="score">Quantity</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="field" ng-repeat="item in shop.all | orderBy:'name' " >
+        <!-- <card call-func="myFunction(card)" question="{{card.question}}"></card> -->
+
+        <td class="text-center name">
+          <jumbotron call-func="myFunction(jumbotron)" item="{{item.name}}"></jumbotron>
+        </td> <br/>
+        <td class="text-center name">
+          <jumbotron call-func="myFunction(jumbotron)" item="{{item.cost}}"></jumbotron>
+        </td> <br/>
+        <td class="text-center name">
+          <jumbotron call-func="myFunction(jumbotron)" item="{{item.quantity}}"></jumbotron>
+        </td> <br/>
+
+
+        <td class="text-center score"> <button ng-click="shop.editItem(item)">Edit</button> </td>
+        <td class="text-center score"> <button ng-click="shop.deleteItem(item)">Delete</button> </td>
+      </tr>
+    </tbody>
+    <br/>
+  </table>
+  </div>
+
+
+</div>

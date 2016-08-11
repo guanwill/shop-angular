@@ -13,9 +13,9 @@ angular
 			url: "/about", //the route
 			templateUrl: "about.html" //the view
 		})
-		.state('test', {
-			url: "/test", //the route
-			templateUrl: "test.html" //the view
+		.state('jumbotron', {
+			url: "/jumbotron", //the route
+			templateUrl: "jumbotron.html" //the view
 		})
 		// .state('archive', { //chain states to create another route
 		// 	url: "/archive",

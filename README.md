@@ -6,5 +6,5 @@
 
 #Purpose
 * To practice CRUD-ing in Angular
-* Consume a RESTful API created in Rails (Source)[https://github.com/guanwill/shopboard-backend]
+* Consume a RESTful API created in Rails [Source](https://github.com/guanwill/shopboard-backend)
 * Practice Angular (factories, resources, directives, states)

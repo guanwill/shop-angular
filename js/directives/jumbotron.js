@@ -4,7 +4,7 @@ angular.module('shopApp')
 function jumbotron() {
   var directive = {};
   directive.restrict = 'E'; //match element name
-  directive.replace = false; 
+  directive.replace = false;
   directive.templateUrl = "_jumbotron.html"; //find the jumbotron partial
   directive.scope = {
     item: '@', //allows us to use this anywhere in the app

@@ -15,15 +15,14 @@
 
     <tbody>
       <tr class="field" ng-repeat="item in shop.all | orderBy:'name' " >
-        <!-- <card call-func="myFunction(card)" question="{{card.question}}"></card> -->
 
-        <td class="text-center name">
+        <td class="text-center">
           <jumbotron call-func="myFunction(jumbotron)" item="{{item.name}}"></jumbotron>
         </td> <br/>
-        <td class="text-center name">
+        <td class="text-center">
           <jumbotron call-func="myFunction(jumbotron)" item="{{item.cost}}"></jumbotron>
         </td> <br/>
-        <td class="text-center name">
+        <td class="text-center">
           <jumbotron call-func="myFunction(jumbotron)" item="{{item.quantity}}"></jumbotron>
         </td> <br/>
 
